@@ -10,7 +10,7 @@ import (
 	"golang.org/x/term"
 )
 
-func getInput(s string, echo bool) (string, error) {
+func GetInput(s string, echo bool) (string, error) {
 	if echo {
 		fmt.Print(s)
 		reader := bufio.NewReader(os.Stdin)

@@ -19,7 +19,7 @@ func init() {
 }
 
 func GenerateNewAESKey() {
-	name, err := getInput("Please name the new AES key [leave empty for random name]: \n", true)
+	name, err := GetInput("Please name the new AES key [leave empty for random name]: \n", true)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -38,7 +38,7 @@ func GenerateNewAESKey() {
 }
 
 func GenerateNewPkeyWithLocalAESKey() (string, string) {
-	aesKey := readLocalHexAESKey()
+	aesKey := ReadLocalHexAESKey()
 	addr, pkey, err := core.GenerateNewPkey()
 	if err != nil {
 		log.Fatal(err)
@@ -50,8 +50,8 @@ func GenerateNewPkeyWithLocalAESKey() (string, string) {
 	return addr.Hex(), hex.EncodeToString(encPkey)
 }
 
-func readLocalHexAESKey() []byte {
-	path, err := getInput("Please insert path to the aes key: \n", true)
+func ReadLocalHexAESKey() []byte {
+	path, err := GetInput("Please insert path to the aes key: \n", true)
 	if err != nil {
 		log.Fatal(err)
 	}
