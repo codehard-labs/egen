@@ -11,8 +11,8 @@ import (
 )
 
 func GetInput(s string, echo bool) (string, error) {
+	fmt.Print(s)
 	if echo {
-		fmt.Print(s)
 		reader := bufio.NewReader(os.Stdin)
 		input, err := reader.ReadString('\n')
 		if err != nil {

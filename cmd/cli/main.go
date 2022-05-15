@@ -1,8 +1,12 @@
 package main
 
-import "github.com/codehard-labs/egen/cli"
+import (
+	"fmt"
+
+	"github.com/codehard-labs/egen/cli"
+)
 
 func main() {
-	cli.GenerateNewAESKey()
-	//cli.GenerateNewPkeyWithLocalAESKey()
+	//cli.GenerateNewAESKey()
+	fmt.Println(cli.GenerateNewPkeyWithLocalAESKey())
 }
