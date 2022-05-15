@@ -1,0 +1,7 @@
+keys/
+
+# .env file
+.env
+
+*.key
+*.pem
