@@ -1,7 +1,8 @@
+# generated keys
 keys/
+.keys/
+*.key
+*.pe
 
 # .env file
 .env
-
-*.key
-*.pem

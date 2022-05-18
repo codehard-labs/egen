@@ -33,7 +33,6 @@ func AESEncrypt(plaintext []byte, key []byte) (ciphertext []byte, err error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return gcm.Seal(nonce, nonce, plaintext, nil), nil
 }
 

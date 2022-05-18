@@ -8,5 +8,9 @@ import (
 
 func main() {
 	//cli.GenerateNewAESKey()
-	fmt.Println(cli.GenerateNewPkeyWithLocalAESKey())
+	//cli.GenerateNewPkeyWithLocalAESKey("test")
+	fmt.Println(cli.VerifyLocalPkeyWithLocalAESKey(
+		"0x95f397cFE62Fbcc40C30D3D7870E772267E9bE7b",
+		"test",
+	))
 }

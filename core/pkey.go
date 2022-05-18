@@ -24,6 +24,7 @@ func GenerateNewPkey() (common.Address, []byte, error) {
 	return address, privateKeyBytes, nil
 }
 
+// DecryptPkey decrypts hex-encoded ciphertext of pkey using hex-encoded AES key.
 func DecryptPkey(encryptedPkey string, aesKey string) ([]byte, error) {
 	a, err := hex.DecodeString(encryptedPkey)
 	if err != nil {
@@ -41,11 +42,11 @@ func DecryptPkey(encryptedPkey string, aesKey string) ([]byte, error) {
 func DecryptPkeyUTF8(encryptedPkey string, aesKey string) ([]byte, error) {
 	a, err := hex.DecodeString(encryptedPkey)
 	if err != nil {
-		return nil, errors.New("cannot decode encryptedPkey")
+		return nil, errors.New("cannot decode encryptedPkey as hex string")
 	}
 	b, err := hex.DecodeString(aesKey)
 	if err != nil {
-		return nil, errors.New("cannot decode aesKey")
+		return nil, errors.New("cannot decode aesKey as hex string")
 	}
 	c, err := AESDecrypt(a, b)
 	if err != nil {
